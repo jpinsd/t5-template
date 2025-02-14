@@ -1,0 +1,67 @@
+// expand on normalize css with a few extra defaults
+@use "utilities/mixins" as m;
+
+::selection {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+html {
+
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  font-style: var(--font-style);
+
+  color: var(--on-app);
+  background: var(--app);
+
+  // @include m.scrolls(var(--primary-hover), var(--gray-70), 10);
+}
+
+body {
+  padding: 0;
+  // padding: env(safe-area-inset-top)
+  //          env(safe-area-inset-right)
+  //          env(safe-area-inset-bottom)
+  //          env(safe-area-inset-left);
+
+  // overflow-x: hidden;
+}
+
+main {
+  width: min(var(--content-width), 100vw - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
+header {}
+code {}
+
+:where(a, a:visited) {
+  color: var(--on-app);
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-underline-offset: .25em;
+  text-decoration-thickness: 2px;
+}
+
+:where(a:hover) {
+  color: var(--primary-hover);
+  text-decoration-color: var(--primary-hover);
+}
+
+p {
+  font-size: var(--font-size);
+}
+
+img {
+  width: 100%;
+}
+
+
+/* utilities */
+.-noScroll {
+  height: 100vh;
+  width: 100vw;
+  overflow: clip;
+}

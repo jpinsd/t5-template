@@ -1,9 +1,8 @@
-@layer reset, colors, metrics, tokens, base, components, overrides;
+@layer reset, utilities, themes, base, components, overrides;
 
-@import url(normalize-min.css) layer(reset);
-
-/* @import url(utilities/normalize-min.css) layer(reset);
-@import url(container-test/reset.css) layer(reset);
-@import url(container-test/colors.css) layer(colors);
-@import url(container-test/base.css) layer(base);
- */
+@import url(utilities/normalize.css) layer(reset);
+@import url(utilities/utilities.css) layer(utilities);
+@import url(theme.css) layer(themes);
+@import url(base.css) layer(base);
+@import url(components/index.css) layer(components);
+@import url(overrides.css) layer(overrides);

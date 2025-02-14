@@ -20,8 +20,8 @@
     "serve": "browser-sync start --server public --files public --no-ghost-mode --no-open",
     "start": "npm-run-all copy --parallel watch serve",
     "build": "npm-run-all copy build:*",
-    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
-    "poststart": "postcss public/css/*.css -u autoprefixer"
+    "postbuild": "postcss public/css/**/*.css -u autoprefixer cssnano -r --no-map",
+    "poststart": "postcss public/css/**/*.css -u autoprefixer"
   },
   "author": "JP Pohlmann",
   "license": "MIT",
