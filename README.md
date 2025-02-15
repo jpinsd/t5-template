@@ -11,7 +11,7 @@
 - `sass/utilities/_colors.scss` - sass color variables
 - `sass/utilities/_fonts.scss` - font family, and base font styles
 - `sass/utilities/_metrics.scss` - breakpoints, padding, animation and transition times
-- `sass/components/*.scss` - put individual components in here. Buttons, form elements, etc. Make sure to `@forward` them in `sass/components/index.scss` so they will be included in the output styles. 
+- `sass/components/*.scss` - put individual components in here. Buttons, form elements, etc. Make sure to add them in `sass/components/index.scss` so they will be included in the output styles. 
 - `sass/themes.scss` - dark and light themes, motion and contrast variations.
 - `sass/overrides.scss` - anything that needs to be changed from the base styles and components.
 
@@ -32,7 +32,7 @@ button {
   color: var(--on-primary);
 }
 ```
-
+Also, for some reason updating a style in components causes all styles to drop in the browser. You will need to manuall click reload to see the updated styles. I'm looking into why this happens. 
 
 
 Build scripts are based on the [great work](https://thinkdobecreate.com/articles/minimum-static-site-sass-setup/) by Stephanie Eckles
