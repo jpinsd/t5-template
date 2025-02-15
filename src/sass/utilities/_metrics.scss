@@ -14,8 +14,10 @@ $ts: .1s;
 $tm: .25s;
 $tl: .4s;
 $tx: .6s;
+$txx: 1s;
 
 :root {
   --content-width: #{$max-width};
-  --padding: #{$padding}
+  --padding: #{$padding};
+  --border-radius: .25rem;
 }

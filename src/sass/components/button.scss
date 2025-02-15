@@ -12,7 +12,7 @@ button,
   border-radius: var(--radius);
   padding: 0.5em 0.75em;
   cursor: pointer;
-  transition: var(--transition-m);
+  transition: var(--tx-m);
 
   &:hover {
     background: var(--bkg-hover);
