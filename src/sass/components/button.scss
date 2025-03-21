@@ -1,0 +1,35 @@
+button,
+.button {
+  --bkg : var(--app);
+  --text: var(--on-app);
+  --bkg-hover: var(--surface);
+  --bkg-active: var(--surface);
+  --radius: 0.25em;
+
+  background: var(--bkg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5em 0.75em;
+  cursor: pointer;
+  transition: var(--tx-m);
+
+  &:hover {
+    background: var(--bkg-hover);
+    box-shadow: 0 0.25em 0.5em var(--border);
+  }
+
+  &:active {
+    background: var(--bkg-active);
+    box-shadow: 0 0 0.25em var(--bkg-active);
+  }
+
+  &.-cta {
+    --bkg: var(--primary);
+    --text: var(--on-primary);
+    --border: var(--primary);
+    --radius: 1.5em;
+    --bkg-hover: var(--primary-hover);
+    --bkg-active: var(--primary-active);
+  }
+}

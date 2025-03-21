@@ -1,0 +1,23 @@
+// breakpoints
+$break-xs: 600px;
+$break-sm: 905px;
+$break-md: 1240px;
+$break-lg: 1696px;
+
+// measurements
+$padding: 1rem;
+$max-width: $break-md;
+$breakpoint-menu: $break-sm;
+
+//animations and transitions
+$ts: .1s;
+$tm: .25s;
+$tl: .4s;
+$tx: .6s;
+$txx: 1s;
+
+:root {
+  --content-width: #{$max-width};
+  --padding: #{$padding};
+  --border-radius: .25rem;
+}

@@ -1,0 +1,58 @@
+@use "sass:color";
+// @use "sass:map";
+// @use "sass:string";
+
+//named colors
+$sst-orange: #FF5308;
+
+$gray-00    : #fafafa;
+$gray-02    : #f7f7f7;
+$gray-05    : #ededed;
+$gray-10    : #e5e5e5;
+$gray-15    : #d9d9d9;
+$gray-20    : #c2c2c2;
+$gray-30    : #a9a9a9;
+$gray-40    : #959595;
+$gray-50    : #757575;
+$gray-60    : #686868;
+$gray-70    : #565656;
+$gray-80    : #3f3f3f;
+$gray-90    : #2e2e2e;
+$gray-100   : #1d1d1d;
+
+$white      : #ffffff;
+$black      : #000000;
+
+$primary-40  : #E56D39;
+$primary-50  : #DF4907;
+$primary-60  : #B23A06;
+
+$success-40 : #28BD3B;
+$success-50 : #29A039;
+$success-60 : #288234;
+
+$error-40   : #F32828;
+$error-50   : #EB0000;
+$error-60   : #BF1313;
+
+$warning-30 : #FBBD08;
+$warning-40 : #D9A715;
+$warning-50 : #B7901E;
+
+$info-30    : #559CFF;
+$info-40    : #2981FA;
+$info-50    : #0066F4;
+$info-60    : #145EC6;
+
+$focus      : #1d9bf0;
+
+
+@function toRGB($color) {
+  @return color.red($color) + ", " + color.green($color) + ", " + color.blue($color);
+}
+
+@mixin toHSL($color) {
+   --h: #{color.hue($color)};
+   --s: #{color.saturation($color)};
+   --l: #{color.lightness($color)};
+}
