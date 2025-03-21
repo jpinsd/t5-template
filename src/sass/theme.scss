@@ -51,7 +51,8 @@
 
 
 :root {
-  color-scheme: light dark; // both are supported
+  //color-scheme: light dark; // both are supported
+  color-scheme: only light; // both are supported
   @include light;
   @include reducedMotion;
 
