@@ -80,3 +80,26 @@
 }
 
 
+
+/*
+ _______ _______ __   __        _______  _______
+ |______    |      \_/   |      |______  |______
+ ______|    |       |    |_____ |______  ______|
+
+*/
+
+@mixin link {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-underline-offset: .25em;
+  text-decoration-thickness: 2px;
+}
+
+@mixin link-hover {
+  color: var(--primary-hover);
+  text-decoration-color: var(--primary-hover);
+}
+
+
+

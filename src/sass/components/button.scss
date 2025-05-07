@@ -1,14 +1,18 @@
+// @use "../utilities/colors" as *;
+@use "../utilities/utilities" as *;
+
 button,
 .button {
-  --bkg : var(--app);
-  --text: var(--on-app);
-  --bkg-hover: var(--surface);
-  --bkg-active: var(--surface);
+  --bkg : var(--primary);
+  --text: var(--on-primary);
+  --bkg-hover: var(--primary-hover);
+  --bkg-active: var(--primary-active);
+  --border: var(--bkg);
   --radius: 0.25em;
 
   background: var(--bkg);
   color: var(--text);
-  border: 1px solid var(--border);
+  border: var(--border-width) solid var(--border);
   border-radius: var(--radius);
   padding: 0.5em 0.75em;
   cursor: pointer;
@@ -16,20 +20,56 @@ button,
 
   &:hover {
     background: var(--bkg-hover);
-    box-shadow: 0 0.25em 0.5em var(--border);
+    box-shadow: 0 0.25em 0.5em var(--bkg);
   }
 
   &:active {
     background: var(--bkg-active);
-    box-shadow: 0 0 0.25em var(--bkg-active);
+    box-shadow: 0 0 0.25em var(--bkg);
   }
 
-  &.-cta {
-    --bkg: var(--primary);
-    --text: var(--on-primary);
-    --border: var(--primary);
-    --radius: 1.5em;
-    --bkg-hover: var(--primary-hover);
-    --bkg-active: var(--primary-active);
+  &.-secondary {
+    --bkg: var(--interactive-bkg);
+    --text: var(--interactive-text);
+    --bkg-hover: var(--interactive-hover);
+    --bkg-active: var(--interactive-hover);
+    --border: var(--border-line);
+  }
+
+  &.-destructive {
+    --bkg: #{ $error };
+    --text: #{ $white };
+    --bkg-hover: #{ $error-hover };
+    --bkg-active: #{ $error-active };
+  }
+
+  &.-ghost {
+    --bkg: transparent;
+    --border: var(--border-line);
+    --text: var(--interactive-text);
+    --bkg-hover: transparent;
+    --bkg-active: var(--interactive-hover);
+
+    &:hover {
+      --border: var(--text);
+    }
+
+    &:active {
+      --bkg-active: var(--interactive-active);
+    }
+
+  }
+  &.-link {
+    --bkg: transparent;
+    --text: var(--interactive-text);
+    --bkg-hover: transparent;
+    --bkg-active: transparent;
+    padding-inline: 0;
+
+    @include link;
+
+    &:hover {
+      @include link-hover;
+    }
   }
 }

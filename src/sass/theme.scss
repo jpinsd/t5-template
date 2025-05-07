@@ -4,23 +4,31 @@
 @use "sass:color";
 
 @mixin light {
-  --primary             : #{ $primary-50 };
-  --on-primary          : #{ $white };
-  --primary-hover       : #{ $primary-40 };
-  --primary-active      : #{ $primary-60 };
+  --app-bkg           : #{ $gray-00 };
+  --app-text          : #{ $gray-80 }; // base text color
+  --surface-bkg       : #{ $white };
+  --surface-text      : var(--app-text);
 
-  --app                 : #{ $white };
-  --on-app              : #{ $gray-90 };
+  --modal-text        : #{ $gray-100 };
+  --modal-bkg         : #{ $gray-00 };
+  --modal-overlay     : #{ $gray-80 };
 
-  --surface             : #{ $gray-00 };
-  --on-surface          : #{ $gray-90 };
-  --surface-hover       : #{ $gray-02 };
+  --interactive-text  : #{ $black };
+  --interactive-bkg   : #{ $gray-05 };
+  --interactive-hover : #{ $gray-00 };
+  --interactive-active: #{ $gray-10 };
 
-  --heading-color       : #{ $gray-100 };
-  --text                : #{ $gray-90 };
-  --text-inverted       : #{ $white };
+  --primary           : #{ $cta };
+  --on-primary        : #{ $white };
+  --primary-hover     : #{ $cta-hover };
+  --primary-active    : #{ $cta-active };
 
-  --border              : #{ $gray-15 };
+  --text              : var(--app-text);
+  --text-heading      :  #{ $gray-100 };
+  --text-inverted     : #{ $white };
+
+  --border-line       : #{ $gray-20 };
+  --border-width      : 1px;
 }
 
 @mixin dark {

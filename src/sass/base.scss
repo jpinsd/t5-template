@@ -1,9 +1,14 @@
 // expand on normalize css with a few extra defaults
-@use "utilities/mixins" as m;
+@use "utilities/utilities" as *;
+
+:root {
+  accent-color: var(--primary);
+}
+
 
 ::selection {
   background: var(--primary);
-  color: var(--on-primary);
+  color: var(--text-inverted);
 }
 
 html {
@@ -13,8 +18,8 @@ html {
   font-size: var(--font-size);
   font-style: var(--font-style);
 
-  color: var(--on-app);
-  background: var(--app);
+  color: var(--text);
+  background: var(--app-bkg);
 
   // @include m.scrolls(var(--primary-hover), var(--gray-70), 10);
 }
@@ -38,16 +43,11 @@ header {}
 code {}
 
 :where(a, a:visited) {
-  color: var(--on-app);
-  text-decoration: underline;
-  text-decoration-color: var(--primary);
-  text-underline-offset: .25em;
-  text-decoration-thickness: 2px;
+  @include link;
 }
 
 :where(a:hover) {
-  color: var(--primary-hover);
-  text-decoration-color: var(--primary-hover);
+  @include link-hover;
 }
 
 p {
@@ -58,6 +58,9 @@ img {
   width: 100%;
 }
 
+li {
+  margin-bottom: .35em;
+}
 
 /* utilities */
 .-noScroll {

@@ -7,15 +7,385 @@
   <title>Document</title>
 
   <link rel='stylesheet' href='css/styles.css'>
+  <style>
+    section {
+      margin-block: 2rem;
+    }
+    .display-cards {
+      display: grid;
+      grid-template: repeat(2, auto) / repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1rem;
+
+      .card {
+        display: grid;
+        grid-row-end: span 2;
+        grid-template-rows: subgrid;
+        align-items: start;
+        /* border: 1px solid var(--border); */
+        border-radius: .35rem;
+        box-shadow: .1rem .2rem .5rem rgba(0,0,0,.2);
+        padding: .5rem;
+
+        h2, dl {
+          margin-block: 0;
+        }
+
+        dl {
+          display: grid;
+          grid-template-columns: max-content 1fr;
+          gap: 1.625rem;
+        }
+        dt {font-weight: bold; align-self: start}
+        dd {margin: 0; align-self: center}
+      }
+
+      .headings {
+        dt { align-self: center}
+        dd *{ margin-block: 0}
+      }
+    }
+    .flex {
+      display: flex; flex-direction: row; gap: 1rem; flex-wrap: wrap;
+
+      &.-col {flex-direction: column; gap: 0}
+    }
+    [type="range"] {max-width: 45%}
+
+  </style>
 </head>
 <body>
-  <main>
-    <h1>Hello, world</h1>
-    <div>
-      this is a <button>button</button>, and this is a <button class='-cta'>CTA button</button>
-    </div>
+ <main>
+   <h1>Hello, world!</h1>
 
-  </main>
+   <section>
+     <p>This is a sample page to view and adjust the base styles. These styles are for basic HTML elements, such as paragraphs, fonts, types, spacing, and other non-interaction elements. </p>
+
+     <p>Here are some examples with <a href='#'>links and anchors</a> and also some basics like <em>emphasis</em>, and <strong>strong emphasis</strong>.</p>
+
+   </section>
+
+   <section class="display-cards -compact">
+
+     <!--
+       div.card>h2{title}+dl>(dt>{element $}^dd{example $})*2
+     -->
+
+     <div class='card'>
+       <h2>Buttons</h2>
+       <dl>
+         <dt>default</dt>
+           <dd><button>button</button></dd>
+
+         <dt>secondary</dt>
+           <dd><button class='-secondary'>Secondary</button></dd>
+
+         <dt>destructive</dt>
+           <dd><button class='-destructive'>Destructive</button></dd>
+
+         <dt>ghost</dt>
+           <dd><button class='-ghost'>Ghost</button></dd>
+
+         <dt>link</dt>
+           <dd><button class='-link'>Link button</button></dd>
+       </dl>
+     </div>
+
+     <div class='card'>
+       <h2>Links</h2>
+       <dl>
+         <dt>default</dt>
+         <dd><a href='#'>Default link</a></dd>
+         <dt>button</dt>
+         <dd><a href='#' class='button'>Button link</a></dd>
+       </dl>
+     </div>
+
+     <div class='card'>
+       <h2>Quoted text</h2>
+       <dl>
+         <dt>cite</dt>
+           <dd><cite>This is a citation</cite></dd>
+         <dt>code</dt>
+           <dd><code>example code</code></dd>
+         <dt>quote</dt>
+           <dd><q>I like turtles</q></dd>
+
+         <dt>blockquote</dt>
+         <dd><blockquote>A block quote with a large amount of text. Lorem ipsum dolor sit amet consectetur adipisicing elit.</blockquote></dd>
+       </dl>
+     </div>
+
+     <div class='card'>
+       <h2>Headings</h2>
+       <dl class="headings">
+         <dt>h1</dt>
+           <dd><h1>Heading h1</h1></dd>
+         <dt>h2</dt>
+           <dd><h2>Heading h2</h2></dd>
+         <dt>h3</dt>
+           <dd><h3>Heading h3</h3></dd>
+         <dt>h4</dt>
+           <dd><h4>Heading h4</h4></dd>
+         <dt>h5</dt>
+           <dd><h5>Heading h5</h5></dd>
+         <dt>h6</dt>
+           <dd><h6>Heading h6</h6></dd>
+       </dl>
+     </div>
+
+     <div class='card'>
+       <h2>Lists</h2>
+       <dl>
+         <dt>unordered list</dt>
+         <dd>
+           <ul>
+             <li>Lorem, ipsum.</li>
+             <li>Aspernatur, fugiat?</li>
+             <li>Tenetur, aperiam.</li>
+           </ul>
+         </dd>
+
+         <dt>ordered list</dt>
+         <dd>
+           <ol>
+             <li>Lorem, ipsum.</li>
+             <li>Dignissimos, quam!</li>
+             <li>Dolor, dolore?</li>
+           </ol>
+         </dd>
+
+         <dt>menu list</dt>
+         <dd>
+           <menu>
+             <li><a href='#'>Lorem, ipsum.</a></li>
+             <li><a href='#'>Dignissimos, quam!</a></li>
+             <li><a href='#'>Dolor, dolore?</a></li>
+           </menu>
+         </dd>
+
+         <dt>definition list</dt>
+         <dd>
+           <dl>
+             <dt>title 1</dt>
+               <dd>definition 1</dd>
+             <dt>title 2</dt>
+               <dd>definition 2</dd>
+             <dt>title 3</dt>
+               <dd>definition 3</dd>
+           </dl>
+         </dd>
+       </dl>
+     </div>
+
+     <div class='card'>
+       <h2>Text elements</h2>
+       <dl>
+         <dt>abbreviation</dt>
+           <dd>
+             <abbr title='Light Amplification by Stimulated Emission of Radiation'>laser</abbr>,
+           <abbr title='Strong-Tie Unified Design System'>STUDS</abbr>
+           </dd>
+
+         <dt>emphasis</dt>
+           <dd><em>emphasis</em></dd>
+
+         <dt>strong</dt>
+           <dd><strong>Strong Emphasis</strong></dd>
+
+         <dt>mark</dt>
+           <dd><mark>Highlighted text</mark></dd>
+       </dl>
+     </div>
+
+
+     <div class='card'>
+       <h2>Inputs</h2>
+       <dl>
+         <dt>radio buttons</dt>
+           <dd class="flex">
+
+             <div>
+               <input type='radio' name='radio-test' id='radio-test-1'>
+               <label for='radio-test-1'>Red</label>
+             </div>
+
+             <div>
+               <input type='radio' name='radio-test' id='radio-test-2'>
+               <label for='radio-test-2'>Green</label>
+             </div>
+
+             <div>
+               <input type='radio' name='radio-test' id='radio-test-3' checked>
+               <label for='radio-test-3'>Blue</label>
+             </div>
+
+           </dd>
+
+         <dt>checkbox</dt>
+           <dd class="flex">
+             <div>
+               <input type='checkbox' name='checkbox-1' id='checkbox-1'>
+               <label for='checkbox-1'>Cats</label>
+             </div>
+
+             <div>
+               <input type='checkbox' name='checkbox-2' id='checkbox-2' checked>
+               <label for='checkbox-2'>Dogs</label>
+             </div>
+
+             <div>
+               <input type='checkbox' name='checkbox-3' id='checkbox-3'>
+               <label for='checkbox-3'>Turtles</label>
+             </div>
+           </dd>
+
+           <dt>color</dt>
+             <dd clas="flex">
+               <input type='color' id="my-color" value="#a763e8">
+               <label for='my-color'>Choose a color</label>
+             </dd>
+
+           <dt>date</dt>
+             <dd clas="flex">
+               <label for="date-start">Start date:</label>
+
+             <input
+               type="date"
+               id="date-start"
+               name="trip-start"
+               value="2025-07-22"
+               min="2025-01-01"
+               max="2025-12-31" />
+             </dd>
+
+
+           <dt>range</dt>
+             <dd class="flex">
+               <input
+                 type="range"
+                 id="cowbell"
+                 name="cowbell"
+                 min="0"
+                 max="100"
+                 value="65" />
+               <label for="cowbell">Cowbell</label>
+             </dd>
+
+
+           <dt>select</dt>
+             <dd>
+               <label for="standard-select">Standard Select</label>
+               <div class="select">
+                 <select id="standard-select">
+                   <option value="Option 1">Option 1</option>
+                   <option value="Option 2">Option 2</option>
+                   <option value="Option 3">Option 3</option>
+                   <option value="Option 4">Option 4</option>
+                   <option value="Option 5">Option 5</option>
+                   <option value="Option length">
+                     Option that has too long of a value to fit
+                   </option>
+                 </select>
+               </div>
+             </dd>
+
+           <dt>text</dt>
+             <dd clas="flex">
+               <label for="first-name">First name:</label>
+
+             <input
+               type="text"
+               id="first-name"
+               name="first-name"
+
+             />
+
+             </dd>
+
+
+       </dl>
+     </div>
+
+     <div class='card'>
+       <h2>Fieldset</h2>
+       <dl>
+         <dt>fieldset</dt>
+         <dd>
+           <fieldset>
+             <legend>examples</legend>
+             <div class="flex">
+
+               <div>
+                 <input type='radio' name='radio-test-b' id='radio-test-1b'>
+                 <label for='radio-test-1b'>Red</label>
+               </div>
+
+               <div>
+                 <input type='radio' name='radio-test-b' id='radio-test-2b'>
+                 <label for='radio-test-2b'>Green</label>
+               </div>
+
+               <div>
+                 <input type='radio' name='radio-test-b' id='radio-test-3b' checked>
+                 <label for='radio-test-3b'>Blue</label>
+               </div>
+             </div>
+           </fieldset>
+         </dd>
+       </dl>
+     </div>
+
+
+     <div class='card'>
+       <h2>Details</h2>
+       <dl>
+         <dt>details</dt>
+           <dd>
+             <details>
+               <summary>Details</summary>
+               <p>Something small enough to escape casual notice.</p>
+             </details>
+           </dd>
+       </dl>
+     </div>
+
+     <div class='card'>
+       <h2>Feedback</h2>
+       <dl>
+         <dt>progress</dt>
+           <dd class="flex -col">
+             <label for="file">File progress:</label>
+             <progress id="file" max="100" value="70">70%</progress>
+           </dd>
+
+         <dt>meter</dt>
+           <dd class="flex -col">
+             <label for="fuel">Fuel level: (very low)</label>
+             <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="30">
+               at 50/100
+             </meter>
+
+             <label for="fuel">Fuel level: (low)</label>
+             <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50">
+               at 50/100
+             </meter>
+
+             <label for="fuel">Fuel level: (optimum)</label>
+             <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="80">
+               at 50/100
+             </meter>
+           </dd>
+       </dl>
+     </div>
+
+
+
+
+   </section>
+
+
+
+ </main>
 
 
 </body>
