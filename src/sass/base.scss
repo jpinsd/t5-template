@@ -68,3 +68,10 @@ li {
   width: 100vw;
   overflow: clip;
 }
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
