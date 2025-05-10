@@ -1,0 +1,17 @@
+.wrapper:has(input[type=radio]) {
+	gap: 0.5rem;
+}
+
+.wrapper:has(input[type=checkbox]) {
+	gap: 0.5rem;
+}
+
+:where([type=text],
+			[type=password],
+			[type=range],
+			[type=email],
+			select) {
+	flex: 1 0 auto;
+	width: 100%;
+}
+
